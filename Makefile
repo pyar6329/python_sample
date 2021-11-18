@@ -8,8 +8,4 @@ run: ## run main.py
 
 .PHONY:	test
 test: ## run: pytest
-	@poetry run pytest
-
-.PHONY:	doctest
-doctest: ## run: doctest
-	@poetry run python -m doctest src/sample/utils.py
+	@poetry run pytest --doctest-modules
