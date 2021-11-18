@@ -1,9 +1,24 @@
 def print_match(num: int):
+    # x = 2
     match num:
-        case 2:
-            print(f'{num}')
+        # case x:
+        #     print(f'{x}')
         case _:
-            print('otherwise')
+            print(_)
+            # print('otherwise')
+
+def foo():
+    items = [1, 2, 3]
+    match items:
+        case [1, 2]:
+            print('ok')
+
+        case [head, *tail]:
+            print(head)
+            print(tail)
+
+        case _:
+            print('ng')
 
 def correct_info(item):
     """
