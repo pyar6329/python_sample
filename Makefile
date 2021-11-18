@@ -4,7 +4,7 @@ help: ## show help message.
 
 .PHONY:	run
 run: ## run main.py
-	@src/sample/main.py
+	@poetry run python src/sample/main.py
 
 .PHONY:	test
 test: ## run: pytest
