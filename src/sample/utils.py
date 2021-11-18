@@ -7,7 +7,7 @@ def print_match(num: int):
 
 def correct_info(item):
     """
-    it should be removed link
+    it should be return first match
     >>> correct_info({'state': 'open', 'number': 29604, 'title': '[3.9] [docs] Add missing word'})
     {'state': 'open', 'number': 29604, 'title': '[3.9] [docs] Add missing word', 'closed_at': None}
     """
