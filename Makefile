@@ -7,12 +7,13 @@ run: ## run main.py
 	@docker exec -it python-sample poetry run python src/sample/main.py
 
 .PHONY:	test
-test: ## run: pytest
+test: ## pytest
 	@docker exec -it python-sample poetry run pytest --doctest-modules
 
 .PHONY: up
 up: ## docker run
 	@./scripts/run_docker.sh
+	@./scripts/install_node.sh
 	@make poetry_install
 
 .PHONY: poetry_install
@@ -26,3 +27,11 @@ down: ## docker stop
 .PHONY: shell
 shell: ## docker exec -it --rm /bin/bash
 	@docker exec -it python-sample /bin/bash
+
+.PHONY: mypy
+mypy: ## mypy type_sample.py
+	@docker exec -it python-sample poetry run mypy src/sample/type_sample.py
+
+.PHONY: pyright
+pyright: ## pyright type_sample.py
+	@docker exec -it python-sample poetry run pyright src/sample/type_sample.py

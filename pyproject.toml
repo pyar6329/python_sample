@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.10.0,<3.11"
 requests = "^2.26.0"
 mypy = "^0.930"
+pyright = "^0.0.13"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
